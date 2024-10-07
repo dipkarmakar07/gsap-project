@@ -48,3 +48,20 @@ hamburger.addEventListener("click", () => {
     y: -900,
     ease: "power2.out"
  });
+
+ const scrollContainer = document.querySelector(".infinty-horizontal-scroll-box");
+ const totalScrollWidth = scrollContainer.scrollWidth; // total width of the scrollable area
+ 
+ gsap.fromTo(scrollContainer, 
+   {
+     x: 0
+   }, 
+   {
+     duration: 5,
+     x: -10, // scrolling to the end
+     ease: "linear",
+     repeat: -1,  // repeat indefinitely
+     yoyo: true   // reverse direction at the end
+   }
+ );
+ 
